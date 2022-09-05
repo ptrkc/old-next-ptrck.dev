@@ -6,7 +6,7 @@ const Document = () => (
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="icon" type="image/png" href="/favicon.png" />
     </Head>
-    <body className="bg-slate-900 text-white">
+    <body className="bg-neutral-900 text-white">
       <Main />
       <NextScript />
     </body>
