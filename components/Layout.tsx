@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
 import Head from 'next/head';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const DefaultLayout = ({ children } : PropsWithChildren) => (
   <div>
@@ -9,9 +10,10 @@ const DefaultLayout = ({ children } : PropsWithChildren) => (
       <meta name="description" content="Personal blog and portfolio." />
     </Head>
     <Header />
-    <main className="p-2">
+    <main className="p-2 mx-auto max-w-3xl">
       {children}
     </main>
+    <Footer />
   </div>
 );
 
