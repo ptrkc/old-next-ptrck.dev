@@ -10,7 +10,7 @@ const DefaultLayout = ({ children } : PropsWithChildren) => (
       <meta name="description" content="Personal blog and portfolio." />
     </Head>
     <Header />
-    <main className="p-2 mx-auto max-w-3xl">
+    <main className="py-4 px-2 mx-auto max-w-4xl">
       {children}
     </main>
     <Footer />

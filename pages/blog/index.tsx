@@ -1,7 +1,14 @@
+import Head from 'next/head';
+
 const BlogHomePage = () => (
-  <div className="flex justify-center items-center h-screen">
-    <h1>Soon?</h1>
-  </div>
+  <>
+    <Head>
+      <title>Blog - Patrick Carneiro - Software Developer</title>
+    </Head>
+    <div className="flex justify-center items-center h-screen">
+      <h1>Soon?</h1>
+    </div>
+  </>
 );
 
 export default BlogHomePage;

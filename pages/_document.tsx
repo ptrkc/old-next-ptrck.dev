@@ -8,7 +8,7 @@ const Document = () => (
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
     </Head>
-    <body className="bg-orange-100  text-neutral-800">
+    <body className="bg-orange-100 text-neutral-800">
       <Main />
       <NextScript />
     </body>

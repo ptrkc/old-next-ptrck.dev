@@ -1,4 +1,4 @@
-import { PropsWithChildren , ChangeEvent, DragEvent, RefObject, useRef, useState } from 'react';
+import { PropsWithChildren, ChangeEvent, DragEvent, RefObject, useRef, useState } from 'react';
 
 import { FiUploadCloud, FiTrash2, FiFileText, FiRotateCw } from 'react-icons/fi';
 

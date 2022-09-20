@@ -101,7 +101,7 @@ const FileDropzoneSection = () => {
 const ComponentsPage: NextPage = () => (
   <div>
     <Head>
-      <title>React Components</title>
+      <title>React Components - Patrick Carneiro - Software Developer</title>
       <meta name="description" content="Custom React Components." />
     </Head>
     <main className="max-w-4xl mx-auto p-2 grid grid-cols-1 gap-10">
