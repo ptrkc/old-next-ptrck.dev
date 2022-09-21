@@ -6,7 +6,7 @@ const BlogHomePage = () => (
       <title>Blog - Patrick Carneiro - Software Developer</title>
     </Head>
     <div className="flex justify-center items-center h-screen">
-      <h1>Soon?</h1>
+      <h1>wip</h1>
     </div>
   </>
 );

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { PropsWithChildren } from 'react';
+import Link from 'next/link';
 
 const NavLink = ({ href, children } : PropsWithChildren<{href: string}>) => (
   <Link className="hover:underline p-2 font-bold" href={href}>
