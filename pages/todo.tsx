@@ -1,9 +1,10 @@
 import { PropsWithChildren } from 'react';
 import Head from 'next/head';
+import cn from 'utils/classnames';
 
-const TodoItem = ({ children } : PropsWithChildren) => (
-  <li>
-    <input className="mr-2" type="checkbox" />
+const TodoItem = ({ children, checked } : PropsWithChildren<{checked?: boolean}>) => (
+  <li className={cn(checked && 'text-neutral-500 line-through')}>
+    <input className="mr-2" type="checkbox" checked={!!checked} />
     {children}
   </li>
 );
@@ -19,10 +20,10 @@ const TodoPage = () => (
         <TodoItem>
           Style: dark mode
         </TodoItem>
-        <TodoItem>
+        <TodoItem checked>
           Header: fixed with blur
         </TodoItem>
-        <TodoItem>
+        <TodoItem checked>
           About: actual download pdf
         </TodoItem>
         <TodoItem>

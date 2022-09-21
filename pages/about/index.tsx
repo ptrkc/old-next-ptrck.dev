@@ -41,7 +41,7 @@ const AboutPage = () => (
     <div className="flex flex-col items-start gap-4">
       <h1>About</h1>
       <p>If you are looking for a good old PDF CV, you can get it here:</p>
-      <LinkBox href="#">
+      <LinkBox href="/Patrick_Carneiro_CV_2022.pdf" target="_blank" rel="noopener noreferrer">
         Patrick_Carneiro_CV_2022.pdf
         <FiPaperclip />
       </LinkBox>
@@ -62,18 +62,18 @@ const AboutPage = () => (
           During lockdown, bought a Raspberry Pi to play with, switched to Linux on all my
           computers and started learning to program.
         </TimelineItem>
-        <TimelineItem icon="🎓" date="Jun, 2020">Got my bachelors degree in Business.</TimelineItem>
+        <TimelineItem icon="🎓" date="Jun, 2020">Got my bachelors degree in Business Administration.</TimelineItem>
         <TimelineItem icon="🌱" date="Feb, 2020">Became vegan after about 3 years vegetarian.</TimelineItem>
         <TimelineItem icon="🏰" date="Nov, 2019 - Feb 2020">
-          Approved to the
+          Approved for the
           {' '}
           <UnderlinedLink href="https://jobs.disneycareers.com/cultural-exchange-program">Cultural Exchange Program</UnderlinedLink>
           {' '}
           at the Walt Disney
           World Resort, Florida, USA.
         </TimelineItem>
-        <TimelineItem icon="💼" date="Jun, 2017">Started my bachelors in Business.</TimelineItem>
-        <TimelineItem icon="🇺🇸" date="Jan, 2012 - Jun 2012">Was an exchange student in Louisiana, USA.</TimelineItem>
+        <TimelineItem icon="💼" date="Jun, 2017">Started my bachelors in Business Administration.</TimelineItem>
+        <TimelineItem icon="🇺🇸" date="Jan, 2012 - Jun 2012">When I was 15, I was an exchange student in Louisiana, USA.</TimelineItem>
         <TimelineItem icon="👶" date="May, 1996" isLast>&quot;Hello World&quot;, Rio, Brazil.</TimelineItem>
       </TimeLine>
     </div>
