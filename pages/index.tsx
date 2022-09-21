@@ -4,13 +4,13 @@ import LinkBox from 'components/LinkBox';
 
 const ProfilePicture = () => (
   <Image
-    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAADAgMAAADEhDYSAAAACVBMVEWAgIAAAACAAADfLp0nAAAADklEQVR4nGNgYAhgWAAAAZYA8fanfOoAAAAASUVORK5CYII="
     placeholder="blur"
     className="overflow-hidden rounded-full border-2 border-neutral-800"
-    width="450"
-    height="600"
+    alt="Patrick"
     src="/images/patrick.jpg"
-    alt="patrick"
+    width={450}
+    height={600}
+    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/APLz9PX4+9bb4AD79vb/0cK9u8IAwrK5qYJ3gXB5ADYAAI8xRmIAIUB4Fv66tTIFAAAAAElFTkSuQmCC"
   />
 );
 
@@ -35,7 +35,7 @@ const Presentation = () => (
 );
 
 const HomePage = () => (
-  <div className="mx-auto flex justify-between pt-10">
+  <div className="mx-auto flex justify-between py-10">
     <Presentation />
   </div>
 );

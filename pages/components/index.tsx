@@ -15,7 +15,7 @@ const SegmentedControlSection = () => {
   const [selectedValue, setSelectedValue] = useState(OPTIONS[0].value);
   return (
     <div className="grid grid-cols-1 gap-4">
-      <h1>SegmentedControl</h1>
+      <h2>SegmentedControl</h2>
       <p>
         Selected value:
         {' '}
@@ -56,7 +56,7 @@ const FileDropzoneSection = () => {
 
   return (
     <div className="grid grid-cols-1 gap-4">
-      <h1>FileDropzone</h1>
+      <h2>FileDropzone</h2>
       <label htmlFor="mime-types" className="w-full grid gap-2">
         MIME Types (comma separated, will reset selected files)
         <input
@@ -76,24 +76,25 @@ const FileDropzoneSection = () => {
             checked={isMultiple}
           />
           Multiple files (will reset selected files)
-          {String(isMultiple)}
         </div>
       </label>
       <p>Component (not an actual upload, 1 second timeout):</p>
-      <FileDropzone
-        multiple={isMultiple}
-        value={selectedFiles}
-        onChange={setSelectedFiles}
-        mimeTypes={mimeTypes}
-      />
-      <button
-        className="btn btn-blue mx-auto"
-        type="button"
-        disabled={isDisabled}
-        onClick={handleSubmit}
-      >
-        Submit
-      </button>
+      <div className="bg-white p-8">
+        <FileDropzone
+          multiple={isMultiple}
+          value={selectedFiles}
+          onChange={setSelectedFiles}
+          mimeTypes={mimeTypes}
+        />
+        <button
+          className="btn btn-blue mx-auto mt-4"
+          type="button"
+          disabled={isDisabled}
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 };
@@ -105,7 +106,7 @@ const ComponentsPage: NextPage = () => (
       <meta name="description" content="Custom React Components." />
     </Head>
     <main className="max-w-4xl mx-auto p-2 grid grid-cols-1 gap-10">
-      <hr className="border-neutral-600" />
+      <h1>React Components</h1>
       <SegmentedControlSection />
       <hr className="border-neutral-600" />
       <FileDropzoneSection />

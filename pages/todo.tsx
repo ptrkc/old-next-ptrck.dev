@@ -41,10 +41,7 @@ const TodoPage = () => (
         <TodoItem>
           Home: testimonials, thanks mom;
         </TodoItem>
-        <TodoItem>
-          Projects: add photos (with loading blur)
-        </TodoItem>
-        <TodoItem>
+        <TodoItem checked>
           Projects: add photos with loading blur
         </TodoItem>
         <TodoItem>

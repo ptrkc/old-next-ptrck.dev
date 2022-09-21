@@ -1,6 +1,7 @@
 import { PropsWithChildren, ChangeEvent, DragEvent, RefObject, useRef, useState } from 'react';
 
 import { FiUploadCloud, FiTrash2, FiFileText, FiRotateCw } from 'react-icons/fi';
+import cn from 'utils/classnames';
 
 const statusIcon = {
   submitting: {
@@ -52,10 +53,11 @@ const DropzoneFrame = (props: DropzoneFramePropTypes) => {
     /* eslint-disable-next-line jsx-a11y/click-events-have-key-events,
     jsx-a11y/no-static-element-interactions */
     <div
-      className={['grid grid-cols-1 rounded-md border-neutral-600 border-2 border-dashed hover:border-neutral-200 duration-200 overflow-hidden text-sm relative p-4',
-        isHovering && 'bg-neutral-500',
+      className={cn(
+        'grid grid-cols-1 rounded-md border-neutral-600 border-2 border-dashed hover:border-neutral-200 duration-200 overflow-hidden text-sm relative p-4',
+        isHovering && 'bg-neutral-300',
         isEmpty && 'cursor-pointer',
-      ].join(' ')}
+      )}
       onDragEnter={onDragEnter}
       onDragOver={onDragOver}
       onDragLeave={onDragLeave}
@@ -159,14 +161,14 @@ const FileDropzone = ({
       isEmpty={isEmpty}
     >
       {isEmpty ? (
-        <div className="rounded-md bg-neutral-600 p-2 mx-auto">
+        <div className="rounded-md bg-neutral-200 p-2 mx-auto">
           <FiUploadCloud className="w-5 h-5" />
         </div>
       ) : (
         <ul className="w-full spacing-2">
           {selectedFiles.map(({ name, status }) => (
             <li key={name} className="gap-2">
-              <div className="rounded-frame bg-neutral-800 flex m-1 p-2 justify-between items-center">
+              <div className="rounded-frame bg-white flex m-1 p-2 justify-between items-center">
                 <div className="flex justify-center items-center gap-2">
                   <FiFileText className="w-5 h-5" />
                   <p>{name}</p>
