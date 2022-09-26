@@ -9,7 +9,7 @@ const DefaultLayout = ({ children } : PropsWithChildren) => (
       <title>Patrick Carneiro - Software Developer</title>
       <meta name="description" content="Personal blog and portfolio." />
     </Head>
-    <svg className="fixed h-screen w-full mix-blend-soft-light pointer-events-none z-20" xmlns="http://www.w3.org/2000/svg">
+    <svg className="fixed h-screen w-full mix-blend-soft-light pointer-events-none z-20 opacity-0 dark:opacity-100" xmlns="http://www.w3.org/2000/svg">
       <filter id="noiseFilter">
         <feTurbulence
           type="fractalNoise"

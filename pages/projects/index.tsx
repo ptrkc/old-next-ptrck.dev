@@ -43,8 +43,7 @@ const ProjectCard = ({ children }: PropsWithChildren) => (
 );
 
 const Projects = () => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
-
+  <div className="grid grid-cols-1 sm:grid-cols-2 py-6 gap-8 w-full">
     <ProjectCard>
       <ProjectImage
         src="/images/recursion.jpg"
