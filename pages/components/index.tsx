@@ -79,7 +79,7 @@ const FileDropzoneSection = () => {
         </div>
       </label>
       <p>Component (not an actual upload, 1 second timeout):</p>
-      <div className="bg-white p-8">
+      <div className="bg-white dark:bg-neutral-800 p-8">
         <FileDropzone
           multiple={isMultiple}
           value={selectedFiles}

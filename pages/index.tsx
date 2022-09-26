@@ -5,7 +5,7 @@ import LinkBox from 'components/LinkBox';
 const ProfilePicture = () => (
   <Image
     placeholder="blur"
-    className="overflow-hidden rounded-full border-2 border-neutral-800"
+    className="overflow-hidden rounded-full border-2 border-neutral-800 dark:border-orange-100 dark:grayscale"
     alt="Patrick"
     src="/images/patrick.jpg"
     width={450}

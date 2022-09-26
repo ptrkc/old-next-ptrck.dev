@@ -33,7 +33,7 @@ const SegmentedControl = ({
       {/* Background Frame */}
       <div
         style={{ left: `${optionLeft}%`, width: `${optionWidth}%` }}
-        className="p-1 h-full absolute top-0 duration-300"
+        className="p-1 h-full absolute top-0"
       >
         {/* Background */}
         <div className="rounded-md h-full shadow-md bg-neutral-900" />

@@ -16,7 +16,7 @@ const Description = ({ children }: PropsWithChildren) => (
 );
 
 const ProjectImage = ({ alt, src, height, width, blurDataURL }: ImageProps) => (
-  <div className="h-40 border-b-2 border-neutral-800 flex justify-center items-center overflow-hidden relative">
+  <div className="h-40 border-b-2 border-neutral-800 dark:border-orange-100 flex justify-center items-center overflow-hidden relative">
     <Image
       src={src}
       blurDataURL={blurDataURL}
@@ -37,13 +37,13 @@ const ProjectContent = ({ title, children }:PropsWithChildren<{title:string}>) =
 );
 
 const ProjectCard = ({ children }: PropsWithChildren) => (
-  <div className="flex flex-col bg-orange-50 border-2 border-neutral-800 duration-200 shadow-neutral-800 hover:shadow-[4px_4px]">
+  <div className="flex flex-col bg-orange-50 dark:bg-neutral-800 border-2 border-neutral-800 dark:border-orange-100 shadow-neutral-800 hover:shadow-[4px_4px]">
     {children}
   </div>
 );
 
 const Projects = () => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
 
     <ProjectCard>
       <ProjectImage

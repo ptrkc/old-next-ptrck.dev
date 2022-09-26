@@ -19,14 +19,14 @@ const TimeLine = ({ children }: PropsWithChildren) => (
 const TimelineItem = ({ icon, date, isFirst, isLast, children }: TimelineItemProps) => (
   <div className="flex items-center relative">
     <div className="flex flex-col justify-center items-center">
-      <div className={cn('border-neutral-800 border-[1px] absolute top-0 h-1/2 -z-10', isFirst && 'hidden')} />
-      <div className={cn('border-neutral-800 border-[1px] absolute bottom-0 h-1/2 -z-10', isLast && 'hidden')} />
-      <div className="text-xl w-10 h-10 shrink-0 bg-white border-neutral-800 border-2 flex justify-center items-center rounded-full">
+      <div className={cn('border-neutral-800 dark:border-orange-100 border-[1px] absolute top-0 h-1/2 -z-10', isFirst && 'hidden')} />
+      <div className={cn('border-neutral-800 dark:border-orange-100 border-[1px] absolute bottom-0 h-1/2 -z-10', isLast && 'hidden')} />
+      <div className="text-xl w-10 h-10 shrink-0 bg-white dark:bg-neutral-800 border-neutral-800 dark:border-orange-100 border-2 flex justify-center items-center rounded-full">
         {icon}
       </div>
     </div>
-    <div className="bg-white border-neutral-800 border-[1px] w-5 shrink-0" />
-    <div className="border-neutral-800 border-2 bg-white rounded-sm p-2 my-1">
+    <div className="bg-white dark:bg-neutral-800 border-neutral-800 dark:border-orange-100 border-[1px] w-5 shrink-0" />
+    <div className="border-neutral-800 dark:border-orange-100 border-2 bg-white dark:bg-neutral-800 rounded-sm p-2 my-1">
       <p className="text-neutral-500">{date}</p>
       <p>{children}</p>
     </div>

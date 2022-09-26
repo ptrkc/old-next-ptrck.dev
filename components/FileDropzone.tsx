@@ -54,7 +54,7 @@ const DropzoneFrame = (props: DropzoneFramePropTypes) => {
     jsx-a11y/no-static-element-interactions */
     <div
       className={cn(
-        'grid grid-cols-1 rounded-md border-neutral-600 border-2 border-dashed hover:border-neutral-200 duration-200 overflow-hidden text-sm relative p-4',
+        'grid grid-cols-1 rounded-md border-neutral-600 border-2 border-dashed hover:border-neutral-200 overflow-hidden text-sm relative p-4',
         isHovering && 'bg-neutral-300',
         isEmpty && 'cursor-pointer',
       )}
@@ -168,7 +168,7 @@ const FileDropzone = ({
         <ul className="w-full spacing-2">
           {selectedFiles.map(({ name, status }) => (
             <li key={name} className="gap-2">
-              <div className="rounded-frame bg-white flex m-1 p-2 justify-between items-center">
+              <div className="rounded-lg overflow-hidden shadow hover:md:shadow-md w-full bg-white dark:bg-neutral-800 flex m-1 p-2 justify-between items-center">
                 <div className="flex justify-center items-center gap-2">
                   <FiFileText className="w-5 h-5" />
                   <p>{name}</p>
@@ -190,7 +190,7 @@ const FileDropzone = ({
         </ul>
       )}
       <button type="button" className="pt-2" onClick={() => inputRef?.current?.click()}>
-        <span className="text-blue-400 font-bold hover:text-blue-500 duration-150">
+        <span className="text-blue-400 font-bold hover:text-blue-500">
           Click to select
         </span>
         {' '}

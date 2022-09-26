@@ -18,7 +18,6 @@ const Footer = () => (
         <li><NavLink href="/about">About</NavLink></li>
         <li><NavLink href="/blog">Blog</NavLink></li>
         <li><NavLink href="/projects">Projects</NavLink></li>
-        <li><NavLink href="/components">Components</NavLink></li>
       </ul>
       <Divider />
       <ul className="flex flex-col gap-2">
