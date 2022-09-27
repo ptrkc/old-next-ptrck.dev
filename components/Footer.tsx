@@ -21,8 +21,8 @@ const Footer = () => (
       </ul>
       <Divider />
       <ul className="flex flex-col gap-2">
-        <li><NavLink href="https://github.com/ptrkc">GitHub /ptrkc</NavLink></li>
-        <li><NavLink href="https://www.linkedin.com/in/patrickcarneiro/">LinkedIn /patrickcarneiro</NavLink></li>
+        <li><NavLink href="https://github.com/ptrkc">GitHub @ptrkc</NavLink></li>
+        <li><NavLink href="https://www.linkedin.com/in/patrickcarneiro/">LinkedIn @patrickcarneiro</NavLink></li>
         <li><NavLink href="mailto:pcarneiro.dev@gmail.com">pcarneiro.dev@gmail.com</NavLink></li>
       </ul>
     </div>

@@ -4,7 +4,7 @@ import cn from 'utils/classnames';
 
 const TodoItem = ({ children, checked } : PropsWithChildren<{checked?: boolean}>) => (
   <li className={cn(checked && 'text-neutral-500 line-through')}>
-    <input className="mr-2" type="checkbox" checked={!!checked} />
+    <input className="mr-2" type="checkbox" checked={!!checked} readOnly />
     {children}
   </li>
 );
@@ -17,17 +17,26 @@ const TodoPage = () => (
     <div className="flex flex-col items-start gap-4">
       <h1>TODO:</h1>
       <ul>
-        <TodoItem>
+        <TodoItem checked>
           Style: dark mode
         </TodoItem>
         <TodoItem checked>
+          Style: dark mode sync between tabs
+        </TodoItem>
+        <TodoItem checked>
+          Style: animate page transitions
+        </TodoItem>
+        <TodoItem checked>
           Header: fixed with blur
+        </TodoItem>
+        <TodoItem>
+          Header: Show underlined active page
         </TodoItem>
         <TodoItem checked>
           About: actual download pdf
         </TodoItem>
         <TodoItem>
-          About: add pics
+          About: add pics to cards
         </TodoItem>
         <TodoItem>
           Home: blog preview
@@ -36,25 +45,16 @@ const TodoPage = () => (
           Home: projects preview
         </TodoItem>
         <TodoItem>
-          Home: techs I know, list or fancy &quot;marquee&quot;
-        </TodoItem>
-        <TodoItem>
-          Home: testimonials, thanks mom;
+          Home: techs I know list;
         </TodoItem>
         <TodoItem checked>
-          Projects: add photos with loading blur
+          Projects: add pictures with base64 blur
         </TodoItem>
         <TodoItem>
-          Blog: MDX vs Notion?
+          Blog: MDX, Notion, GitHub?
         </TodoItem>
         <TodoItem>
-          Blog: views
-        </TodoItem>
-        <TodoItem>
-          Blog: likes and comments?
-        </TodoItem>
-        <TodoItem>
-          Components: adjust style
+          Blog: views, likes, comments?
         </TodoItem>
       </ul>
     </div>

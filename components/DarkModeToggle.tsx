@@ -1,34 +1,36 @@
 import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
 import { FiMoon, FiSun } from 'react-icons/fi';
+import useDarkMode from 'hooks/useDarkMode';
+import cn from 'utils/classnames';
 
 const DarkModeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const [isDark, toggleDarkMode] = useDarkMode();
   const [mounted, setMounted] = useState(false);
-  const isLight = theme === 'light';
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(isLight ? 'dark' : 'light');
-  };
-
   return (
-    <label htmlFor="darkCheckbox" className="cursor-pointer flex justify-center items-center w-8 h-8 text-lg rounded-full hover:bg-neutral-600/50 dark:hover:bg-black/50">
+    <label
+      htmlFor="darkCheckbox"
+      className={cn(
+        'cursor-pointer flex justify-center items-center w-8 h-8 text-lg rounded-full hover:bg-neutral-600/50 dark:hover:bg-black/50',
+        mounted ? 'opacity-100' : 'opacity-0',
+      )}
+    >
       <input
         className="hidden"
         type="checkbox"
         id="darkCheckbox"
-        checked={isLight}
-        onChange={toggleTheme}
+        checked={isDark}
+        onChange={toggleDarkMode}
         disabled={!mounted}
       />
-      {mounted && isLight ? (
-        <FiMoon />
-      ) : (
+      {!mounted || isDark ? (
         <FiSun />
+      ) : (
+        <FiMoon />
       )}
     </label>
   );
