@@ -54,7 +54,8 @@ const DropzoneFrame = (props: DropzoneFramePropTypes) => {
     jsx-a11y/no-static-element-interactions */
     <div
       className={cn(
-        'grid grid-cols-1 rounded-md border-neutral-600 border-2 border-dashed hover:border-neutral-200 overflow-hidden text-sm relative p-4',
+        `grid grid-cols-1 rounded-md border-neutral-600 border-2 border-dashed 
+        hover:border-neutral-200 overflow-hidden text-sm relative p-4`,
         isHovering && 'bg-neutral-300',
         isEmpty && 'cursor-pointer',
       )}

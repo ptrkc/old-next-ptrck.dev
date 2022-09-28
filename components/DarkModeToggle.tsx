@@ -12,27 +12,24 @@ const DarkModeToggle = () => {
   }, []);
 
   return (
-    <label
-      htmlFor="darkCheckbox"
+    <button
+      type="button"
+      aria-label="Toggle Dark Mode"
       className={cn(
-        'cursor-pointer flex justify-center items-center w-8 h-8 text-lg rounded-full hover:bg-neutral-600/50 dark:hover:bg-black/50',
+        `cursor-pointer flex justify-center items-center w-8 h-8 text-lg rounded-full 
+        hover:bg-neutral-600/50 active:bg-neutral-600/50 dark:hover:bg-black/50 
+        dark:active:hover:bg-black/50`,
         mounted ? 'opacity-100' : 'opacity-0',
       )}
+      onClick={toggleDarkMode}
+      disabled={!mounted}
     >
-      <input
-        className="hidden"
-        type="checkbox"
-        id="darkCheckbox"
-        checked={isDark}
-        onChange={toggleDarkMode}
-        disabled={!mounted}
-      />
       {!mounted || isDark ? (
         <FiSun />
       ) : (
         <FiMoon />
       )}
-    </label>
+    </button>
   );
 };
 
