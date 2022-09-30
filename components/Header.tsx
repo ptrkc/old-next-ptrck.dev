@@ -1,40 +1,44 @@
 import Link from 'next/link';
-import { PropsWithChildren, useEffect, useState } from 'react';
+import { NextRouter, useRouter } from 'next/router';
 import DarkModeToggle from 'components/DarkModeToggle';
-import { useRouter } from 'next/router';
 import cn from 'utils/classnames';
 
-const HeaderLink = ({ href, children } : PropsWithChildren<{href: string}>) => {
-  const { pathname } = useRouter();
-  const [isActive, setIsActive] = useState(false);
+const headerLinks = [
+  { text: 'Home', href: '/' },
+  { text: 'About', href: '/about' },
+  { text: 'Blog', href: '/blog' },
+  { text: 'Projects', href: '/projects' },
+];
 
-  useEffect(() => {
-    if (pathname.toLowerCase() === href) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }, [pathname, href]);
+interface HeaderLinkProps {
+  text: string,
+  href: string,
+  router: NextRouter,
+}
 
+const HeaderLink = ({ text, href, router }: HeaderLinkProps) => {
+  const isActive = router.asPath === href;
   return (
-    <Link className={cn('hover:underline p-2 font-bold', isActive && 'underline')} href={href}>
-      {children}
+    <Link className={cn('border-transparent border-b-2 p-2 font-bold hover:border-inherit', isActive && 'border-inherit')} href={href}>
+      {text}
     </Link>
   );
 };
 
-const Header = () => (
-  <div className="h-14">
-    <nav className="p-2 fixed top-0 left-0 right-0 z-10 bg-orange-100 dark:bg-neutral-800 duration-200 backdrop-blur [@supports(backdrop-filter:blur())]:bg-orange-100/50 dark:[@supports(backdrop-filter:blur())]:bg-neutral-900/50">
-      <div className="mx-auto max-w-3xl flex justify-around items-center">
-        <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/about">About</HeaderLink>
-        <HeaderLink href="/blog">Blog</HeaderLink>
-        <HeaderLink href="/projects">Projects</HeaderLink>
-        <DarkModeToggle />
-      </div>
-    </nav>
-  </div>
-);
+const Header = () => {
+  const router = useRouter();
+  return (
+    <div className="h-14">
+      <nav className="p-2 fixed top-0 left-0 right-0 z-10 bg-orange-100 dark:bg-neutral-800 duration-200 backdrop-blur [@supports(backdrop-filter:blur())]:bg-orange-100/50 dark:[@supports(backdrop-filter:blur())]:bg-neutral-900/50">
+        <div className="mx-auto max-w-3xl flex justify-around items-center">
+          {headerLinks.map(({ text, href }) => (
+            <HeaderLink key={href} text={text} href={href} router={router} />
+          ))}
+          <DarkModeToggle />
+        </div>
+      </nav>
+    </div>
+  );
+};
 
 export default Header;

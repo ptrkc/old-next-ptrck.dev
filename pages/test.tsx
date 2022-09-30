@@ -1,7 +1,7 @@
-import type { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { SiCss3, SiFlutter, SiHtml5, SiJavascript, SiLinux, SiNextdotjs, SiNodedotjs, SiPostgresql, SiPrisma, SiReact, SiTypescript } from 'react-icons/si';
 import cn from 'utils/classnames';
-import type { NextPageWithLayout } from './_app';
+import { NextPageWithLayout } from './_app';
 
 const logos = [
   {
