@@ -19,7 +19,13 @@ interface HeaderLinkProps {
 const HeaderLink = ({ text, href, router }: HeaderLinkProps) => {
   const isActive = router.asPath === href;
   return (
-    <Link className={cn('border-transparent border-b-2 p-2 font-bold hover:border-inherit', isActive && 'border-inherit')} href={href}>
+    <Link
+      className={cn(
+        'border-b-transparent border-b-2 p-2 font-bold hover:border-b-neutral-800 dark:hover:border-b-orange-100',
+        isActive && 'border-b-neutral-800 dark:border-b-orange-100',
+      )}
+      href={href}
+    >
       {text}
     </Link>
   );
