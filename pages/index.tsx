@@ -1,7 +1,7 @@
 import Image from 'next/future/image';
 import { FiArrowRight } from 'react-icons/fi';
 import LinkBox from 'components/LinkBox';
-import WavingHand from 'components/WavingHand/index.module';
+import WavingHand from 'components/WavingHand';
 
 const ProfilePicture = () => (
   <Image

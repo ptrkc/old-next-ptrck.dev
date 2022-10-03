@@ -1,8 +1,8 @@
+import { PropsWithChildren } from 'react';
+import Head from 'next/head';
+import Image, { ImageProps } from 'next/future/image';
 import LinkBox from 'components/LinkBox';
 import UnderlinedLink from 'components/UnderlinedLink';
-import Image, { ImageProps } from 'next/future/image';
-import Head from 'next/head';
-import { PropsWithChildren } from 'react';
 
 const CardBottom = ({ children }: PropsWithChildren) => (
   <div className="relative bottom-0 flex flex-col gap-2">
@@ -37,7 +37,7 @@ const ProjectContent = ({ title, children }:PropsWithChildren<{title:string}>) =
 );
 
 const ProjectCard = ({ children }: PropsWithChildren) => (
-  <div className="flex flex-col bg-orange-50 dark:bg-neutral-800 border-2 border-neutral-800 dark:border-orange-100 shadow-neutral-800 hover:shadow-[4px_4px]">
+  <div className="flex flex-col transition-[box-shadow] bg-orange-50 dark:bg-neutral-800 border-2 border-neutral-800 dark:border-orange-100 shadow-neutral-800 hover:shadow-[4px_4px]">
     {children}
   </div>
 );

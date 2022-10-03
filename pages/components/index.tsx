@@ -1,6 +1,6 @@
-import { NextPage } from 'next';
-import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { NextPage } from 'next';
 import SegmentedControl from 'components/SegmentedControl';
 import FileDropzone, { ProcessedFile } from 'components/FileDropzone';
 

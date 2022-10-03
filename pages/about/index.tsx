@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
 import Head from 'next/head';
-import cn from 'utils/classnames';
+import { FiPaperclip } from 'react-icons/fi';
 import UnderlinedLink from 'components/UnderlinedLink';
 import LinkBox from 'components/LinkBox';
-import { FiPaperclip } from 'react-icons/fi';
+import cn from 'utils/classnames';
 
 interface TimelineItemProps extends PropsWithChildren {
   icon: string;

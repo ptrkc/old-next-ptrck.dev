@@ -29,7 +29,7 @@ const TodoPage = () => (
         <TodoItem checked>
           Header: fixed with blur
         </TodoItem>
-        <TodoItem>
+        <TodoItem checked>
           Header: Show underlined active page
         </TodoItem>
         <TodoItem checked>

@@ -9,7 +9,7 @@ const Document = () => (
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
     </Head>
-    <body className="bg-orange-100 text-neutral-800 duration-200 dark:bg-neutral-900 dark:text-orange-100">
+    <body className="bg-orange-100 text-neutral-800 transition-[background-color] dark:bg-neutral-900 dark:text-orange-100">
       <Script id="prevent-flash" strategy="beforeInteractive">
         {'if(typeof window!==\'undefined\'&&window.localStorage.isDark===\'false\'){document.documentElement.classList.remove(\'dark\')}'}
       </Script>

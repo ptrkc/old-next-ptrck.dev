@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import Link from 'next/link';
+import Link from 'components/Link';
 
 const FooterLink = ({ href, children } : PropsWithChildren<{href: string}>) => (
   <Link className="hover:underline p-2 font-bold" href={href}>

@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import DarkModeToggle from 'components/DarkModeToggle';
+import Link from 'components/Link';
 import cn from 'utils/classnames';
 
 const headerLinks = [
@@ -21,7 +21,7 @@ const HeaderLink = ({ text, href, router }: HeaderLinkProps) => {
   return (
     <Link
       className={cn(
-        'border-b-transparent border-b-2 p-2 font-bold hover:border-b-neutral-800 dark:hover:border-b-orange-100',
+        'transition-[border] border-b-transparent border-b-2 p-2 font-bold hover:border-b-neutral-800 dark:hover:border-b-orange-100',
         isActive && 'border-b-neutral-800 dark:border-b-orange-100',
       )}
       href={href}
@@ -35,7 +35,7 @@ const Header = () => {
   const router = useRouter();
   return (
     <div className="h-14">
-      <nav className="p-2 fixed top-0 left-0 right-0 z-10 bg-orange-100 dark:bg-neutral-800 duration-200 backdrop-blur [@supports(backdrop-filter:blur())]:bg-orange-100/50 dark:[@supports(backdrop-filter:blur())]:bg-neutral-900/50">
+      <nav className="p-2 fixed top-0 left-0 right-0 z-10 transition-[background-color] bg-orange-100 dark:bg-neutral-800 backdrop-blur [@supports(backdrop-filter:blur())]:bg-orange-100/50 dark:[@supports(backdrop-filter:blur())]:bg-neutral-900/50">
         <div className="mx-auto max-w-3xl flex justify-around items-center">
           {headerLinks.map(({ text, href }) => (
             <HeaderLink key={href} text={text} href={href} router={router} />

@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-  * {
-    -webkit-tap-highlight-color: transparent;
-    @apply transition-[box-shadow,_background-color,_border-color,_filter,_opacity] duration-200;
-  }
   h1,
   h2,
   h3 {
