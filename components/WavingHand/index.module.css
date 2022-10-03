@@ -1,0 +1,16 @@
+@keyframes wave {
+  0% { transform: rotate(0.0deg) }
+  5% { transform: rotate(16.0deg) }
+  10% { transform: rotate(-6.0deg) }
+  15% { transform: rotate(16.0deg) }
+  20% { transform: rotate(-4.0deg) }
+  25% { transform: rotate(16.0deg) }
+  30% { transform: rotate(0.0deg) }
+  100% { transform: rotate(0.0deg) }
+}
+
+.wavingHand {
+  animation: wave 5s 1s infinite;
+  transform-origin: 75% 75%;
+  display: inline-block;
+}

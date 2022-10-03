@@ -1,6 +1,7 @@
 import Image from 'next/future/image';
 import { FiArrowRight } from 'react-icons/fi';
 import LinkBox from 'components/LinkBox';
+import WavingHand from 'components/WavingHand/index.module';
 
 const ProfilePicture = () => (
   <Image
@@ -20,7 +21,10 @@ const Presentation = () => (
       <ProfilePicture />
     </div>
     <div className="gap-4 flex flex-col items-baseline">
-      <p>👋Hello! I am</p>
+      <p className="text-xl">
+        <WavingHand />
+        Hello! I am
+      </p>
       <h1>Patrick Carneiro</h1>
       <p>and I&apos;m a developer, creating things for both work and fun.</p>
       <p>
