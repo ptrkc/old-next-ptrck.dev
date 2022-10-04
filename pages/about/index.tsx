@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
 import Head from 'next/head';
 import { FiPaperclip } from 'react-icons/fi';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 import UnderlinedLink from 'components/UnderlinedLink';
 import LinkBox from 'components/LinkBox';
 import cn from 'utils/classnames';
@@ -26,7 +27,7 @@ const TimelineItem = ({ icon, date, isFirst, isLast, children }: TimelineItemPro
       </div>
     </div>
     <div className="bg-white dark:bg-neutral-800 border-neutral-800 dark:border-orange-100 border-[1px] w-5 shrink-0" />
-    <div className="border-neutral-800 dark:border-orange-100 border-2 bg-white dark:bg-neutral-800 rounded-sm p-2 my-1">
+    <div className="border-neutral-800 dark:border-orange-100 border-2 bg-white dark:bg-neutral-800 p-2 my-1">
       <p className="text-neutral-500">{date}</p>
       <p>{children}</p>
     </div>
@@ -40,11 +41,21 @@ const AboutPage = () => (
     </Head>
     <div className="flex flex-col items-start gap-4">
       <h1>About</h1>
-      <p>If you are looking for a good old PDF CV, you can get it here:</p>
-      <LinkBox href="/Patrick_Carneiro_CV_2022.pdf" target="_blank" rel="noopener noreferrer">
-        Patrick_Carneiro_CV_2022.pdf
-        <FiPaperclip />
-      </LinkBox>
+      <h2>Links</h2>
+      <div className="flex flex-wrap gap-4">
+        <LinkBox href="/Patrick_Carneiro_CV_2022.pdf" target="_blank" rel="noopener noreferrer">
+          Resume.pdf
+          <FiPaperclip />
+        </LinkBox>
+        <LinkBox href="https://github.com/ptrkc" target="_blank" rel="noopener noreferrer">
+          GitHub
+          <SiGithub />
+        </LinkBox>
+        <LinkBox href="https://www.linkedin.com/in/patrickcarneiro" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+          <SiLinkedin />
+        </LinkBox>
+      </div>
       <h2>Timeline</h2>
       <TimeLine>
         <TimelineItem icon="🧑‍💻" date="Oct, 2021" isFirst>

@@ -13,8 +13,7 @@ const LinkBox = ({
     className={cn(
       `inline-flex justify-center gap-1 items-center text-lg font-semibold px-3 py-2 
   border-2 border-neutral-800 dark:border-orange-100 bg-white dark:bg-neutral-800 
-  transition-[box-shadow] shadow-neutral-800 
-  hover:shadow-[4px_4px] active:shadow-[4px_4px]
+  transition-[box-shadow] shadow-neutral-800 hover:shadow-[4px_4px] active:shadow-[4px_4px]
   `,
       className,
     )}

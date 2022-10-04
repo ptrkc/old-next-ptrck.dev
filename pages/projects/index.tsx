@@ -37,7 +37,11 @@ const ProjectContent = ({ title, children }:PropsWithChildren<{title:string}>) =
 );
 
 const ProjectCard = ({ children }: PropsWithChildren) => (
-  <div className="flex flex-col transition-[box-shadow] bg-orange-50 dark:bg-neutral-800 border-2 border-neutral-800 dark:border-orange-100 shadow-neutral-800 hover:shadow-[4px_4px]">
+  <div className={`
+  flex flex-col transition-[box-shadow] bg-orange-50 dark:bg-neutral-900 border-2 
+  border-neutral-800 dark:border-orange-100 shadow-neutral-800 hover:shadow-[4px_4px]
+  `}
+  >
     {children}
   </div>
 );

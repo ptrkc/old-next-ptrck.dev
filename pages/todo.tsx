@@ -44,7 +44,7 @@ const TodoPage = () => (
         <TodoItem>
           Home: projects preview
         </TodoItem>
-        <TodoItem>
+        <TodoItem checked>
           Home: techs I know list;
         </TodoItem>
         <TodoItem checked>
