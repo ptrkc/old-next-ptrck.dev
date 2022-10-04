@@ -10,6 +10,7 @@
 }
 
 .wavingHand {
+  margin-right: 4px;
   animation: wave 5s 1s infinite;
   transform-origin: 75% 75%;
   display: inline-block;

@@ -21,9 +21,9 @@ const Presentation = () => (
       <ProfilePicture />
     </div>
     <div className="gap-4 flex flex-col items-baseline">
-      <p className="text-xl">
+      <p className="text-lg">
         <WavingHand />
-        Hello! I am
+        Hello there! My name is
       </p>
       <h1>Patrick Carneiro</h1>
       <p>and I&apos;m a developer, creating things for both work and fun.</p>
