@@ -50,11 +50,20 @@ const TodoPage = () => (
         <TodoItem checked>
           Projects: add pictures with base64 blur
         </TodoItem>
-        <TodoItem>
-          Blog: MDX, Notion, GitHub?
+        <TodoItem checked>
+          Blog: MDX, Notion, GitHub? MDX for now
+        </TodoItem>
+        <TodoItem checked>
+          Blog: Home showing posts
         </TodoItem>
         <TodoItem>
           Blog: views, likes, comments?
+        </TodoItem>
+        <TodoItem>
+          Post: style components
+        </TodoItem>
+        <TodoItem>
+          Post: how to handle images?
         </TodoItem>
       </ul>
     </div>
