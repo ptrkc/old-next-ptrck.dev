@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactNode } from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import {
   SiChakraui, SiCss3, SiExpress, SiFlutter, SiGit, SiGithub, SiHtml5, SiJavascript, SiLinux,
   SiNextdotjs, SiNodedotjs, SiPostgresql, SiPrisma, SiReact, SiStyledcomponents, SiTailwindcss,

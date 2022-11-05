@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import Head from 'next/head';
-import Image, { ImageProps } from 'next/future/image';
+import Image, { ImageProps } from 'next/image';
 import LinkBox from 'components/LinkBox';
 import UnderlinedLink from 'components/UnderlinedLink';
 
