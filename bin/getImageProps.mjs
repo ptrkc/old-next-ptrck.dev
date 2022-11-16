@@ -1,7 +1,7 @@
 import { getPlaiceholder } from 'plaiceholder';
 
 (async () => {
-  const { base64, img } = await getPlaiceholder('/images/mywallet.jpg');
+  const { base64, img } = await getPlaiceholder('/images/continha.png');
   console.log(`
   src="${img.src}"
   width={${img.width}}

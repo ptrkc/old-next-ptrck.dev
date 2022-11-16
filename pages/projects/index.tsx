@@ -16,7 +16,7 @@ const Description = ({ children }: PropsWithChildren) => (
 );
 
 const ProjectImage = ({ alt, src, height, width, blurDataURL }: ImageProps) => (
-  <div className="h-40 border-b-2 border-neutral-800 dark:border-orange-100 flex justify-center items-center overflow-hidden relative">
+  <div className="border-b-2 border-neutral-800 dark:border-orange-100 flex justify-center items-center overflow-hidden relative">
     <Image
       src={src}
       blurDataURL={blurDataURL}
@@ -50,27 +50,48 @@ const Projects = () => (
   <div className="grid grid-cols-1 sm:grid-cols-2 py-6 gap-8 w-full">
     <ProjectCard>
       <ProjectImage
-        src="/images/recursion.jpg"
+        src="/images/recursion.png"
         width={450}
-        height={264}
+        height={250}
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJUlEQVR4nAEaAOX/AHNoWtfFrv3pzv/02AAdAADZxbP/+d7/+tzQbxEYn4a2zQAAAABJRU5ErkJggg=="
         alt="this website"
       />
       <ProjectContent title="ptrck.dev">
         <Description>
-          Your&apos;re here! Still
-          {' '}
-          <UnderlinedLink href="/todo">
-            under development
-          </UnderlinedLink>
-          {' '}
-          :)
+          Your&apos;re here! Under development :)
         </Description>
         <CardBottom>
           <p>Tags: React, Next.js, TypeScript, Tailwind CSS.</p>
           <LinkBox className="w-full" href="https://github.com/ptrkc/ptrck.dev">
             GitHub
           </LinkBox>
+        </CardBottom>
+      </ProjectContent>
+    </ProjectCard>
+
+    <ProjectCard>
+      <ProjectImage
+        src="/images/continha.png"
+        width={450}
+        height={250}
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGNQY3DkYLBkkHdisAllKE+vWr503ZT563ms4xiWzmo4ffbC////egryAd+zEAKjytMdAAAAAElFTkSuQmCC"
+        alt="continha calculator"
+      />
+      <ProjectContent title="ContinhaCalculator">
+        <Description>
+          Easily split up the restaurant check with your friends.
+          Made it for my own use, so only in Portuguese for now.
+        </Description>
+        <CardBottom>
+          <p>Tags: React, Vite, TypeScript, Tailwind CSS, zustand.</p>
+          <div className="flex gap-2 w-full">
+            <LinkBox className="w-full" href="https://conta.ptrck.dev/">
+              Try it
+            </LinkBox>
+            <LinkBox className="w-full" href="https://github.com/ptrkc/continha-calculator">
+              GitHub
+            </LinkBox>
+          </div>
         </CardBottom>
       </ProjectContent>
     </ProjectCard>
