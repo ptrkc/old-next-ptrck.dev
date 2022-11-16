@@ -11,7 +11,7 @@ const Divider = () => (<div className="bg-orange-100 w-[1px]" />
 );
 
 const Footer = () => (
-  <footer className="p-8 bg-neutral-800 flex justify-around items-center flex-col gap-8 text-orange-100">
+  <footer className="p-8 dark:bg-white/10 bg-neutral-700 flex justify-around items-center flex-col gap-8 text-orange-100">
     <div className="mx-auto max-w-3xl flex gap-8">
       <ul className="flex flex-col gap-2">
         <li><FooterLink href="/">Home</FooterLink></li>
