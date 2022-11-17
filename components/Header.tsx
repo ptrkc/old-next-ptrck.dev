@@ -6,7 +6,7 @@ import cn from 'utils/classnames';
 const headerLinks = [
   { text: 'Home', href: '/' },
   { text: 'About', href: '/about' },
-  { text: 'Blog', href: '/blog' },
+  // { text: 'Blog', href: '/blog' },
   { text: 'Projects', href: '/projects' },
 ];
 

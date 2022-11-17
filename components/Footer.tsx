@@ -16,7 +16,7 @@ const Footer = () => (
       <ul className="flex flex-col gap-2">
         <li><FooterLink href="/">Home</FooterLink></li>
         <li><FooterLink href="/about">About</FooterLink></li>
-        <li><FooterLink href="/blog">Blog</FooterLink></li>
+        {/* <li><FooterLink href="/blog">Blog</FooterLink></li> */}
         <li><FooterLink href="/projects">Projects</FooterLink></li>
       </ul>
       <Divider />
