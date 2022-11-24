@@ -37,7 +37,7 @@ const possibleTags = {
 
 export type TagNames = keyof typeof possibleTags;
 
-const Tag = ({ tag }: { tag: TagNames }) => {
+const TagBadge = ({ tag }: { tag: TagNames }) => {
   const tagData = possibleTags[tag] || possibleTags.default;
   return (
     <span
@@ -49,4 +49,4 @@ const Tag = ({ tag }: { tag: TagNames }) => {
   );
 };
 
-export default Tag;
+export default TagBadge;

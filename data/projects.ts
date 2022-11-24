@@ -1,4 +1,4 @@
-import { TagNames } from "./Tag";
+import { TagNames } from "../components/TagBadge";
 
 interface ProjectType {
     image: {

@@ -2,9 +2,9 @@ import { PropsWithChildren } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import LinkBox from 'components/LinkBox';
+import TagBadge from 'components/TagBadge';
 import UnderlinedLink from 'components/UnderlinedLink';
-import projects from './projects';
-import Tag from './Tag';
+import projects from 'data/projects';
 
 const CardBottom = ({ children }: PropsWithChildren) => (
   <div className="relative bottom-0 flex flex-col gap-2">{children}</div>
@@ -62,7 +62,7 @@ const Projects = () => (
           <CardBottom>
             <div className="flex flex-wrap gap-2 my-2">
               {project.tags.map(tag => (
-                <Tag key={tag} tag={tag} />
+                <TagBadge key={tag} tag={tag} />
               ))}
             </div>
             <div className="flex gap-2 w-full">
