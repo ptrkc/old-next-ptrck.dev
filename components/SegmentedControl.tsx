@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 interface SegmentedControlOptions {
-  options: Array<{value: string, label: string}>;
+  options: Array<{ value: string; label: string }>;
   selectedValue: string;
   setSelectedValue: Function;
 }
@@ -12,7 +12,7 @@ const SegmentedControl = ({
   setSelectedValue,
 }: SegmentedControlOptions) => {
   const [selectedIndex, setSelectedIndex] = useState(
-    options.findIndex((option) => option.value === selectedValue),
+    options.findIndex(option => option.value === selectedValue),
   );
   const optionWidth = 100 / options.length;
   const optionLeft = selectedIndex * optionWidth;
@@ -25,10 +25,16 @@ const SegmentedControl = ({
     // Frame
     <div className="flex justify-around items-center rounded-md relative bg-neutral-700">
       <div className="absolute top-0 bottom-0 right-0 left-0 flex justify-evenly items-center">
-        {options.map(({ value }, index) => index !== options.length - 1 && (
-        // Divider
-        <div key={`divider-${value}`} className="h-[55%] w-[1px] bg-neutral-400" />
-        ))}
+        {options.map(
+          ({ value }, index) =>
+            index !== options.length - 1 && (
+              // Divider
+              <div
+                key={`divider-${value}`}
+                className="h-[55%] w-[1px] bg-neutral-400"
+              />
+            ),
+        )}
       </div>
       {/* Background Frame */}
       <div

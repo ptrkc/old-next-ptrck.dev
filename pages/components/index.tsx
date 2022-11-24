@@ -16,11 +16,7 @@ const SegmentedControlSection = () => {
   return (
     <div className="grid grid-cols-1 gap-4">
       <h2>SegmentedControl</h2>
-      <p>
-        Selected value:
-        {' '}
-        {selectedValue}
-      </p>
+      <p>Selected value: {selectedValue}</p>
       <p>Component:</p>
       <SegmentedControl
         options={OPTIONS}
@@ -34,18 +30,28 @@ const SegmentedControlSection = () => {
 const FileDropzoneSection = () => {
   const [selectedFiles, setSelectedFiles] = useState<Array<ProcessedFile>>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [mimeTypes, setMimeTypes] = useState(['image/jpeg', 'image/png', 'text/plain', 'application/pdf']);
+  const [mimeTypes, setMimeTypes] = useState([
+    'image/jpeg',
+    'image/png',
+    'text/plain',
+    'application/pdf',
+  ]);
   const [isMultiple, setIsMultiple] = useState(true);
 
-  const handleSubmit = () => new Promise<void>((resolve) => {
-    setIsSubmitting(true);
-    setSelectedFiles(selectedFiles.map((file) => ({ ...file, status: 'submitting' })));
-    setTimeout(() => {
-      setSelectedFiles(selectedFiles.map((file) => ({ ...file, status: 'added' })));
-      setIsSubmitting(false);
-      resolve();
-    }, 1000);
-  });
+  const handleSubmit = () =>
+    new Promise<void>(resolve => {
+      setIsSubmitting(true);
+      setSelectedFiles(
+        selectedFiles.map(file => ({ ...file, status: 'submitting' })),
+      );
+      setTimeout(() => {
+        setSelectedFiles(
+          selectedFiles.map(file => ({ ...file, status: 'added' })),
+        );
+        setIsSubmitting(false);
+        resolve();
+      }, 1000);
+    });
   const reset = () => setSelectedFiles([]);
 
   useEffect(() => {
@@ -64,7 +70,7 @@ const FileDropzoneSection = () => {
           type="text"
           className="rounded-md p-2 text-black"
           value={mimeTypes}
-          onChange={(event) => setMimeTypes(event.target.value.split(','))}
+          onChange={event => setMimeTypes(event.target.value.split(','))}
         />
       </label>
       <label htmlFor="multiple">

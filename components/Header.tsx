@@ -11,9 +11,9 @@ const headerLinks = [
 ];
 
 interface HeaderLinkProps {
-  text: string,
-  href: string,
-  router: NextRouter,
+  text: string;
+  href: string;
+  router: NextRouter;
 }
 
 const HeaderLink = ({ text, href, router }: HeaderLinkProps) => {

@@ -7,7 +7,7 @@ const LinkBox = ({
   className,
   children,
   ...rest
-} : LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>) => (
+}: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>) => (
   <Link
     href={href}
     className={cn(

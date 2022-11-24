@@ -8,25 +8,25 @@ import UnderlinedLink from 'components/UnderlinedLink';
 import formatDate from 'utils/formatDate';
 
 type UnsortedPost = {
-  title: string,
-  date: Date,
-  slug: string
-}
+  title: string;
+  date: Date;
+  slug: string;
+};
 
 type Post = {
-  title: string,
-  date: string,
-  slug: string
-}
+  title: string;
+  date: string;
+  slug: string;
+};
 
 export const getStaticProps = async () => {
   const filenames = fs.readdirSync(path.join('data/posts'));
   const unsortedPosts: UnsortedPost[] = [];
-  filenames.forEach((filename) => {
-    const markdownWithMeta = fs.readFileSync(path.join(
-      'data/posts',
-      filename,
-    ), 'utf-8');
+  filenames.forEach(filename => {
+    const markdownWithMeta = fs.readFileSync(
+      path.join('data/posts', filename),
+      'utf-8',
+    );
     const { data: frontMatter } = matter(markdownWithMeta);
     unsortedPosts.push({
       title: frontMatter.title,
@@ -34,13 +34,17 @@ export const getStaticProps = async () => {
       slug: filename.replace('.mdx', ''),
     });
   });
-  const posts: Post[] = JSON.parse(JSON.stringify(
-    unsortedPosts.sort((a, b) => b.date.getTime() - a.date.getTime()),
-  ));
+  const posts: Post[] = JSON.parse(
+    JSON.stringify(
+      unsortedPosts.sort((a, b) => b.date.getTime() - a.date.getTime()),
+    ),
+  );
   return { props: { posts } };
 };
 
-const BlogHomePage = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const BlogHomePage = ({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
     <Head>
       <title>Blog - Patrick Carneiro - Software Developer</title>

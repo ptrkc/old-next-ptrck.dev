@@ -10,7 +10,9 @@ import { ParsedUrlQuery } from 'querystring';
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join('data/posts'));
   return {
-    paths: files.map((filename) => ({ params: { slug: filename.replace('.mdx', '') } })),
+    paths: files.map(filename => ({
+      params: { slug: filename.replace('.mdx', '') },
+    })),
     fallback: false,
   };
 };
@@ -20,12 +22,12 @@ interface Params extends ParsedUrlQuery {
   slug: string;
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params as Params;
-  const markdownWithMeta = fs.readFileSync(path.join(
-    'data/posts',
-    `${slug}.mdx`,
-  ), 'utf-8');
+  const markdownWithMeta = fs.readFileSync(
+    path.join('data/posts', `${slug}.mdx`),
+    'utf-8',
+  );
   const { data: frontMatter, content } = matter(markdownWithMeta);
   const mdxSource = await serialize(content);
   return {
@@ -39,7 +41,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const components = {};
 
-const PostPage = ({ mdxSource }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const PostPage = ({
+  mdxSource,
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
   <div className="flex flex-col gap-3">
     <MDXRemote {...mdxSource} components={components} />
   </div>

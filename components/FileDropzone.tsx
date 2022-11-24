@@ -1,5 +1,17 @@
-import { PropsWithChildren, ChangeEvent, DragEvent, RefObject, useRef, useState } from 'react';
-import { FiUploadCloud, FiTrash2, FiFileText, FiRotateCw } from 'react-icons/fi';
+import {
+  PropsWithChildren,
+  ChangeEvent,
+  DragEvent,
+  RefObject,
+  useRef,
+  useState,
+} from 'react';
+import {
+  FiUploadCloud,
+  FiTrash2,
+  FiFileText,
+  FiRotateCw,
+} from 'react-icons/fi';
 import cn from 'utils/classnames';
 
 const statusIcon = {
@@ -20,12 +32,7 @@ interface DropzoneFramePropTypes extends PropsWithChildren {
 }
 
 const DropzoneFrame = (props: DropzoneFramePropTypes) => {
-  const {
-    children,
-    isEmpty,
-    inputRef,
-    onDrop: onDropLogic,
-  } = props;
+  const { children, isEmpty, inputRef, onDrop: onDropLogic } = props;
   const [isHovering, setIsHovering] = useState(false);
 
   const stopDefaults = (event: DragEvent) => {
@@ -81,8 +88,13 @@ interface DeleteButtonPropTypes {
   setSelectedFiles: Function;
 }
 
-const DeleteButton = ({ name, selectedFiles, setSelectedFiles }:DeleteButtonPropTypes) => {
-  const removeFile = () => setSelectedFiles(selectedFiles.filter((file) => file.name !== name));
+const DeleteButton = ({
+  name,
+  selectedFiles,
+  setSelectedFiles,
+}: DeleteButtonPropTypes) => {
+  const removeFile = () =>
+    setSelectedFiles(selectedFiles.filter(file => file.name !== name));
   return (
     <button
       aria-label="Deletar arquivo"
@@ -95,41 +107,45 @@ const DeleteButton = ({ name, selectedFiles, setSelectedFiles }:DeleteButtonProp
   );
 };
 
-const readFile = (file: File) => new Promise((resolve) => {
-  const reader = new FileReader();
-  reader.onload = () => resolve(reader.result);
-  reader.readAsText(file);
-});
+const readFile = (file: File) =>
+  new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsText(file);
+  });
 
 interface FileDropzonePropTypes {
   value: Array<ProcessedFile>;
   onChange: Function;
   multiple?: boolean;
-  mimeTypes: Array<string>
+  mimeTypes: Array<string>;
 }
 
-const uniqFileNames = (arr: Array<ProcessedFile>) => (
-  Array.from(new Map(arr.map((file) => [file.name, file])).values())
-);
+const uniqFileNames = (arr: Array<ProcessedFile>) =>
+  Array.from(new Map(arr.map(file => [file.name, file])).values());
 
 const FileDropzone = ({
   value: selectedFiles,
   onChange: setSelectedFiles,
   multiple = false,
   mimeTypes,
-} : FileDropzonePropTypes) => {
+}: FileDropzonePropTypes) => {
   const isEmpty = !selectedFiles.length;
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onDrop = async (event: DragEvent) => {
     if (!multiple && event.dataTransfer.items.length > 1) return;
 
-    const validItems = Array.from(event.dataTransfer.items).filter((item) => item.kind === 'file' && mimeTypes.includes(item.type));
-    const newSelectedFiles = await Promise.all(validItems.map(async (item) => {
-      const file = item.getAsFile();
-      const content = file && await readFile(file);
-      return { name: file?.name || '', content };
-    }));
+    const validItems = Array.from(event.dataTransfer.items).filter(
+      item => item.kind === 'file' && mimeTypes.includes(item.type),
+    );
+    const newSelectedFiles = await Promise.all(
+      validItems.map(async item => {
+        const file = item.getAsFile();
+        const content = file && (await readFile(file));
+        return { name: file?.name || '', content };
+      }),
+    );
     if (!multiple) {
       setSelectedFiles(newSelectedFiles);
       return;
@@ -142,11 +158,15 @@ const FileDropzone = ({
   const handleFilePicker = async (event: ChangeEvent) => {
     const input = event.target as HTMLInputElement;
     const files = input.files || [];
-    const validFiles = Array.from(files).filter((file) => mimeTypes.includes(file.type));
-    const newSelectedFiles = await Promise.all(validFiles.map(async (file) => {
-      const content = await readFile(file);
-      return { name: file.name, content };
-    }));
+    const validFiles = Array.from(files).filter(file =>
+      mimeTypes.includes(file.type),
+    );
+    const newSelectedFiles = await Promise.all(
+      validFiles.map(async file => {
+        const content = await readFile(file);
+        return { name: file.name, content };
+      }),
+    );
     if (!multiple) {
       setSelectedFiles(newSelectedFiles);
       return;
@@ -155,11 +175,7 @@ const FileDropzone = ({
   };
 
   return (
-    <DropzoneFrame
-      onDrop={onDrop}
-      inputRef={inputRef}
-      isEmpty={isEmpty}
-    >
+    <DropzoneFrame onDrop={onDrop} inputRef={inputRef} isEmpty={isEmpty}>
       {isEmpty ? (
         <div className="rounded-md bg-neutral-200 p-2 mx-auto">
           <FiUploadCloud className="w-5 h-5" />
@@ -189,11 +205,14 @@ const FileDropzone = ({
           ))}
         </ul>
       )}
-      <button type="button" className="pt-2" onClick={() => inputRef?.current?.click()}>
+      <button
+        type="button"
+        className="pt-2"
+        onClick={() => inputRef?.current?.click()}
+      >
         <span className="text-blue-400 font-bold hover:text-blue-500">
           Click to select
-        </span>
-        {' '}
+        </span>{' '}
         or drop your file
         {multiple && 's'}
       </button>

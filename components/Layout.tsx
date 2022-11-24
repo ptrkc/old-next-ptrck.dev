@@ -41,7 +41,7 @@ const Transition = ({ children }: PropsWithChildren) => {
   );
 };
 
-const DefaultLayout = ({ children } : PropsWithChildren) => (
+const DefaultLayout = ({ children }: PropsWithChildren) => (
   <div>
     <Head>
       <title>Patrick Carneiro - Software Developer</title>
@@ -49,9 +49,7 @@ const DefaultLayout = ({ children } : PropsWithChildren) => (
     </Head>
     <Header />
     <Transition>
-      <main className="p-4 mx-auto max-w-4xl">
-        {children}
-      </main>
+      <main className="p-4 mx-auto max-w-4xl">{children}</main>
       <Footer />
     </Transition>
   </div>

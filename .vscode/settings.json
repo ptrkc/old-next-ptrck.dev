@@ -1,27 +1,33 @@
 {
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-    },
+    }
   },
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-    },
+    }
   },
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-    },
+    }
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-    },
+    }
   },
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#42b883",

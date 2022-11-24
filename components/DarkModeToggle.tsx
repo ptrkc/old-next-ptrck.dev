@@ -24,11 +24,7 @@ const DarkModeToggle = () => {
       onClick={toggleDarkMode}
       disabled={!mounted}
     >
-      {!mounted || isDark ? (
-        <FiSun />
-      ) : (
-        <FiMoon />
-      )}
+      {!mounted || isDark ? <FiSun /> : <FiMoon />}
     </button>
   );
 };
