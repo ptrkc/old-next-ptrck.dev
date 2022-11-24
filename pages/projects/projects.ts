@@ -1,4 +1,20 @@
-const projects = [
+import { TagNames } from "./Tag";
+
+interface ProjectType {
+    image: {
+        src: string;
+        alt: string;
+        blurData: string;
+    };
+    title: string;
+    description: string;
+    tags: TagNames[];
+    links: {
+        text: string;
+        href: string;
+    }[];
+}
+const projects = <ProjectType[]>[
   {
     image: {
       src: '/images/recursion.png',
@@ -8,7 +24,7 @@ const projects = [
     },
     title: 'ptrck.dev',
     description: "You're here! Under development :)",
-    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    tags: ['typescript', 'nextjs', 'react' , 'tailwindcss'],
     links: [
       {
         text: 'GitHub',
@@ -26,7 +42,7 @@ const projects = [
     title: 'ContinhaCalculator',
     description:
       'Easily split up the restaurant check with your friends. Made it for my own use, so only in Portuguese for now.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    tags: ['typescript', 'react', 'tailwindcss'],
     links: [
       {
         text: 'Try it',
@@ -47,8 +63,8 @@ const projects = [
     },
     title: 'Banana Game',
     description:
-      'Play on your computer with the arrows keys or on your phone by touching the sides of the screen.',
-    tags: ['TypeScript', 'OOP', 'Canvas'],
+      'Play on your computer with the arrows keys or on your phone by touching the sides of the screen. Uses the Canvas API, created while practising OOP.',
+    tags: ['typescript'],
     links: [
       {
         text: 'Play',
@@ -70,7 +86,7 @@ const projects = [
     title: 'Cineflex',
     description:
       'A frontend for booking movie tickets. Note: it uses a shared mock API, so if you get a "Session full" alert, please try another movie or time.',
-    tags: ['JavaScript', 'React', 'styled-components'],
+    tags: ['javascript', 'react', 'styledcomponents'],
     links: [
       {
         text: 'Try it',
@@ -93,12 +109,12 @@ const projects = [
     description:
       'Simple tracker of incomes and expenses. Hosted on Heroku free, might take some seconds to load.',
     tags: [
-      'React',
-      'styled-components',
-      'JavaScript',
-      'Node.js',
-      'PostgreSQL',
+      'javascript',
+      'react',
+      'styledcomponents',
+      'nodejs',
       'express',
+      'postgresql',
     ],
     links: [
       {

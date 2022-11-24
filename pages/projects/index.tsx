@@ -4,6 +4,7 @@ import Image from 'next/image';
 import LinkBox from 'components/LinkBox';
 import UnderlinedLink from 'components/UnderlinedLink';
 import projects from './projects';
+import Tag from './Tag';
 
 const CardBottom = ({ children }: PropsWithChildren) => (
   <div className="relative bottom-0 flex flex-col gap-2">{children}</div>
@@ -59,7 +60,11 @@ const Projects = () => (
         <ProjectContent title={project.title}>
           <Description>{project.description}</Description>
           <CardBottom>
-            <p>Tags: {project.tags.join(', ')}.</p>
+            <div className="flex flex-wrap gap-2 my-2">
+              {project.tags.map(tag => (
+                <Tag key={tag} tag={tag} />
+              ))}
+            </div>
             <div className="flex gap-2 w-full">
               {project.links.map(link => (
                 <LinkBox key={link.href} className="w-full" href={link.href}>
